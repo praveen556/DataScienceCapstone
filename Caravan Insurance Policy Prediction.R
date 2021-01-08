@@ -2,8 +2,8 @@
 # Capstone Project
 # HarvardX: PH125.9x Data Science: Capstone
 # R Code
-# Author: Shilpa Susan Thomas
-# Date: 07/05/2020
+# Author: Praveen Satyavarapu
+# Date: 01/01/2021
 
 
 
@@ -22,18 +22,13 @@ if(!require(caret)) install.packages("caret", repos = "http://cran.us.r-project.
 if(!require(data.table)) install.packages("data.table", repos = "http://cran.us.r-project.org")
 if(!require(lubridate)) install.packages("lubridate", repos = "http://cran.us.r-project.org")
 if(!require(ggplot2)) install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+if(!require(corrplot)) install.packages("corrplot", repos = "http://cran.us.r-project.org")
+if(!require(kableExtra)) install.packages("kableExtra", repos = "http://cran.us.r-project.org")
+if(!require(Metrics)) install.packages("Metrics", repos = "http://cran.us.r-project.org")
+if(!require(mlbench)) install.packages("mlbench", repos = "http://cran.us.r-project.org")
+if(!require(randomForest)) install.packages("randomForest", repos = "http://cran.us.r-project.org")
+if(!require(rpart.plot)) install.packages("rpart.plot", repos = "http://cran.us.r-project.org")
 if(!require(readr)) install.packages("readr", repos = "http://cran.us.r-project.org")
-
-
-# Caravan Insurance Data set
-# Download the dataset from the author's Github account
-# https://raw.githubusercontent.com/ShilpaSThomas/Caravan-Insurance-Capstone-Project/master/caravan-insurance-challenge.csv
-
-urlfile =
-  "https://raw.githubusercontent.com/ShilpaSThomas/Caravan-Insurance-Capstone-Project/master/caravan-insurance-challenge.csv"
-CIdata <- read_csv(url(urlfile))
-head(CIdata)
-
 
 # Load some extra R packages that will be needed for analysis and visualisations
 # The packages are installed if they are missing so that the code can be easily reproduced
@@ -42,6 +37,16 @@ if(!require(dplyr)) install.packages("dplyr", repos = "http://cran.us.r-project.
 if(!require(gridExtra)) install.packages("gridExtra", repos = "http://cran.us.r-project.org")
 if(!require(knitr)) install.packages("knitr", repos = "http://cran.us.r-project.org")
 if(!require(kableExtra)) install.packages("kableExtra", repos = "http://cran.us.r-project.org")
+
+# Caravan Insurance Data set
+# Download the dataset from the author's Github account
+# https://raw.githubusercontent.com/praveen556/DataScienceCapstone/master/caravan-insurance-challenge.csv
+
+urlfile =
+  "https://raw.githubusercontent.com/praveen556/DataScienceCapstone/master/caravan-insurance-challenge.csv"
+CIdata <- read_csv(url(urlfile))
+head(CIdata)
+
 
 
 # Basic analysis
@@ -108,7 +113,7 @@ train_set_Purchase %>% knitr::kable() %>% kable_styling(position = 'center') %>%
 
 
 # Purchase plot
-train_set %>% ggplot(aes(x=train_set$Purchase)) + 
+train_set %>% ggplot(aes(x=Purchase)) + 
   geom_bar(fill = "blue") +
   xlab('Caravan Policy') + 
   ylab('Number of Customers') + 

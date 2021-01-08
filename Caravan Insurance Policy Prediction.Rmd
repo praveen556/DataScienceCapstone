@@ -1,8 +1,8 @@
 ---
 title: "CARAVAN INSURANCE POLICY PREDICTION"
 subtitle: "CAPSTONE PROJECT"
-author: "Shilpa Susan Thomas"
-date: "15th May 2020"
+author: "Praveen Satyavarapu"
+date: "01 January 2020"
 geometry: margin= 2.5 cm
 fontsize: 11pt
 urlcolor: blue
@@ -141,6 +141,12 @@ if(!require(caret)) install.packages("caret", repos = "http://cran.us.r-project.
 if(!require(data.table)) install.packages("data.table", repos = "http://cran.us.r-project.org")
 if(!require(lubridate)) install.packages("lubridate", repos = "http://cran.us.r-project.org")
 if(!require(ggplot2)) install.packages("ggplot2", repos = "http://cran.us.r-project.org")
+if(!require(corrplot)) install.packages("corrplot", repos = "http://cran.us.r-project.org")
+if(!require(kableExtra)) install.packages("kableExtra", repos = "http://cran.us.r-project.org")
+if(!require(Metrics)) install.packages("Metrics", repos = "http://cran.us.r-project.org")
+if(!require(mlbench)) install.packages("mlbench", repos = "http://cran.us.r-project.org")
+if(!require(randomForest)) install.packages("randomForest", repos = "http://cran.us.r-project.org")
+if(!require(rpart.plot)) install.packages("rpart.plot", repos = "http://cran.us.r-project.org")
 if(!require(readr)) install.packages("readr", repos = "http://cran.us.r-project.org")
 
 ```
@@ -149,7 +155,7 @@ if(!require(readr)) install.packages("readr", repos = "http://cran.us.r-project.
 
 ```{r load dataset}
 
-urlfile="https://raw.githubusercontent.com/ShilpaSThomas/Caravan-Insurance-Capstone-Project/master/caravan-insurance-challenge.csv"
+urlfile="https://raw.githubusercontent.com/praveen556/DataScienceCapstone/master/caravan-insurance-challenge.csv"
 CIdata <- read_csv(url(urlfile))
 head(CIdata)
 
@@ -935,7 +941,7 @@ The next feature selection technique that was used was the Recursive Feature Eli
 ```{r RFE plot, echo = FALSE, message = FALSE}
 
 # URL for plot
-# url: "https://github.com/ShilpaSThomas/Caravan-Insurance-Capstone-Project/blob/master/Rplot%20RFE.png"
+# url: "https://github.com/praveen556/DataScienceCapstone/blob/master/Rplot%20RFE.png"
 
 img1_path <- "Rplot RFE.png"
 knitr::include_graphics(img1_path)
