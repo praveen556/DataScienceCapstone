@@ -1,0 +1,42 @@
+---
+title: "Word Prediction Presentation"
+author: "Juhaninho"
+date: "6 August 2019"
+output: ioslides_presentation
+---
+
+## Introduction
+
+The goal of this project is to predict the most likely next words for an input of text.
+For this purpose a shiny app was created where a user can input a sentence and by clicking a button the app predicts the three most likely next words.
+
+## Data Preparation
+
+After reading the data for blogs, news and tweets from the US in the data was sampled and combined to use one dataset consisting of three subsets of the original datasets.
+Then the datasets was splittet into 80% training, 10% validation and 10% test set.
+To clean the data the following methods were applied:
+
+- make every char to lower-case
+- remove signs like: / @ $ : : * & ! ? _ - #
+- remove numbers
+- remove punctuation
+- remove stopwords
+- strip whitespaces
+
+After that the n-grams were created.
+
+## Algorithm
+
+The Algorithm to predict the next words uses a simple backoff starting on 4-gram data. If the input consists of at least two words, the algorithm backs off to 3-gram data, then to 2-gram data and finally to 1-gram data.
+
+After the completion of the algorithm the three most likely words to follow the input are returned.
+
+## Demonstration
+
+```{r pressure, echo=FALSE, out.width = '100%'}
+knitr::include_graphics("./next_word_prediction_presentation_files/screenshot.PNG")
+```
+
+Visit the [Next Word Prediction App](https://juhaninho.shinyapps.io/NextWordPrediction/)
+
+Type your sentence in the textbox and press the button "Predict Next Word" to predict the three most likely words to follow your input.
